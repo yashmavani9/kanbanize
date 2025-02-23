@@ -1,5 +1,5 @@
 import { DeleteIcon } from "@chakra-ui/icons";
-import { Box, IconButton, ScaleFade, Textarea } from "@chakra-ui/react";
+import { Box, IconButton, } from "@chakra-ui/react";
 //import _ from "lodash";
 //import { memo } from "react";
 import { useTaskDragAndDrop } from "../hooks/useTaskDragAndDrop";

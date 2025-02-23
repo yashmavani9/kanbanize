@@ -1,7 +1,6 @@
-import { TimeIcon } from '@chakra-ui/icons';
 import DarkModeIconButton from './components/DarkModeIconButton';
 
-import { Container, Heading, IconButton, SimpleGrid } from "@chakra-ui/react";
+import { Container, IconButton, SimpleGrid } from "@chakra-ui/react";
 import Column from "./components/Column";
 import { ColumnType, DayType } from "./utils/enums";
 

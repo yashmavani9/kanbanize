@@ -1,4 +1,4 @@
-import { ColumnType, DayType } from './enums';
+import { ColumnType } from './enums';
 
 export interface TaskModel {
   id: string;
