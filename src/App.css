@@ -1,0 +1,169 @@
+/* .main {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 120px 24px 160px 24px;
+    pointer-events: none;
+}
+
+.main:before {
+    background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+    position: absolute;
+    content: "";
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.main:after {
+    content: "";
+    background-image: url("/src/assets/grid.svg");
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.4;
+    filter: invert(1);
+} */
+
+/* .main {
+    background-image: url("./assets/grid.svg");
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+} */
+
+.gradient {
+    /* height: fit-content; */
+    z-index: -3;
+    width: 100%;
+    /* max-width: 1500px; */
+    background-image: radial-gradient(at 27% 37%,
+            hsla(215, 98%, 61%, 1) 0px,
+            transparent 0%),
+        radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+        radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+        radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+        radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+        radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    filter: blur(100px) saturate(150%);
+    top: 0px;
+    opacity: 0.11;
+}
+
+.head_text {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    /* Equivalent to mt-5 */
+    font-size: 4rem;
+    /* Equivalent to text-5xl */
+    font-weight: 800;
+    /* Equivalent to font-extrabold */
+    line-height: 1.15;
+    /* Adjust line height accordingly */
+    /* color: #000000; */
+    color: useColorModeValue('gray.500', 'gray.400');
+    /* Equivalent to text-black */
+    text-align: center;
+    /* Equivalent to text-center */
+}
+
+.head_text2 {
+    /* margin-top: 3rem; */
+    margin-bottom: 1rem;
+    /* Equivalent to mt-5 */
+    font-size: 4rem;
+    /* Equivalent to text-5xl */
+    font-weight: 800;
+    /* Equivalent to font-extrabold */
+    line-height: 1.15;
+    /* Adjust line height accordingly */
+    color: #000000;
+    /* Equivalent to text-black */
+    text-align: center;
+    /* Equivalent to text-center */
+}
+
+.orange_gradient {
+    font-size: 4.2rem;
+    background-image: linear-gradient(to right, #0099ff, #00aeff, #00ff62);
+    /* Equivalent to bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 */
+    -webkit-background-clip: text;
+    /* Equivalent to bg-clip-text */
+    background-clip: text;
+    /* Equivalent to bg-clip-text */
+    color: transparent;
+    /* Equivalent to text-transparent */
+}
+
+.desc {
+    margin-top: 0rem;
+    /* Equivalent to mt-5 */
+    font-size: 1.2rem;
+    /* Equivalent to text-lg */
+    /* color: #4B5563;   */
+    color: useColorModeValue('gray.600', 'gray.400');
+    text-align: center;
+    /* Equivalent to text-center */
+    max-width: 40rem;
+    /* Equivalent to max-w-2xl */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+}
+
+.desc2 {
+    margin-top: 0rem;
+    /* Equivalent to mt-5 */
+    font-size: 2.5rem;
+    /* Equivalent to text-lg */
+    /* color: #4B5563;   */
+    color: useColorModeValue('gray-600', 'gray.400');
+    max-width: 40rem;
+    /* Equivalent to max-w-2xl */
+    margin-bottom: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.footer_text {
+    font-size: 1.2rem;
+    /* Equivalent to text-lg */
+    /* color: #4B5563;   */
+    color: useColorModeValue('gray.600', 'gray.400');
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.yash {
+    font-style: italic;
+    color: useColorModeValue("gray.600", 'gray.400');
+    border-bottom: 3px solid #8b8b8b;
+    transition: transform 0.3s ease;  /* Add smooth transition */
+}
+
+.yash:hover {
+    transform: translateY(-5px);
+    /* Translate element 5px upwards on hover */
+}
+
+.lol{
+    background-color: #fafafa;
+}
