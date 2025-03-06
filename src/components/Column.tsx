@@ -32,7 +32,7 @@ const Column: React.FC<ColumnProps> = ({ column, day }) => {
         dropTaskFrom,
         swapTasks,
         updateTask,
-    } = useColumnTasks(column,day);
+    } = useColumnTasks(column, day);
 
     const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
 

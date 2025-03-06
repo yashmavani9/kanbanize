@@ -11,7 +11,8 @@ import useTaskCollection from './useTaskCollection';
 const MAX_TASK_PER_COLUMN = 100;
 
 function useColumnTasks(column: ColumnType, day: DayType) {
-    const [tasks, setTasks] = useTaskCollection();
+    // const [tasks, setTasks] = useTaskCollection();
+    const { tasks, setTasks, resetTasks } = useTaskCollection();
 
     //const columnTasks = tasks[column];
 

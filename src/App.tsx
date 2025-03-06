@@ -1,4 +1,5 @@
 import DarkModeIconButton from './components/DarkModeIconButton';
+import { ArrowUpIcon } from '@chakra-ui/icons'
 
 import { Container, IconButton, SimpleGrid } from "@chakra-ui/react";
 import Column from "./components/Column";
@@ -7,7 +8,15 @@ import { ColumnType, DayType } from "./utils/enums";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
+// import { useLocalStorage } from 'usehooks-ts'; // Assuming this library is used for local storage
+
+import useTaskCollection from './hooks/useTaskCollection';
+
+import NotesSection from './components/NotesSection';
+
 import "./App.css";
+
+import { useState, useEffect } from 'react';
 
 const App = () => {
 
@@ -17,6 +26,38 @@ const App = () => {
     if (todaySection) {
       todaySection.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  //
+  const [isVisible, setIsVisible] = useState(false); // State to track button visibility
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Effect to add scroll event listener
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 100) { // Use scrollY instead of pageYOffset
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
+
+  const { resetTasks } = useTaskCollection();
+
+  // Function to handle task deletion
+  const deletetasks = () => {
+    resetTasks();
+    alert('All tasks have been cleared!'); // Optional: Add a confirmation message
   };
 
   return (
@@ -41,35 +82,56 @@ const App = () => {
 
       <hr />
 
-      {/* <Heading
-        fontSize={{ base: "4xl", sm: "5xl", md: "6xl" }}
-        fontWeight="bold"
-        textAlign="center"
-        bgGradient="linear(to-l, #7928CA, #FF0080)"
-        bgClip="text"
-        mt={4}
-      >
-        Welcome to DnD Kanban
-      </Heading> */}
-
-      {/* <DarkModeIconButton position="absolute" top={-12} right={3} /> */}
-
-      <DarkModeIconButton position={{ base: "absolute", xl: "fixed" }} top={{ base: -12, xl: 4 }} right={3} />
+      <DarkModeIconButton position={{ base: "absolute", "2xl": "fixed" }} top={{ base: -12, "2xl": 4 }} right={3} />
 
       <IconButton
         //position="absolute"
-        position={{ base: "absolute", xl: "fixed" }}
+        position={{ base: "absolute", "2xl": "fixed" }}
         //top={-12}
-        top={{ base: -12, xl: 4 }}
+        top={{ base: -12, "2xl": 4 }}
+        right="135px"
+        onClick={deletetasks}
+        aria-label="cleaer tasks"
+        variant="outline"
+        colorScheme="red"
+        //icon={<TimeIcon />}
+        icon={<span>Clear Tasks</span>}
+        px={2}
+      />
+
+      <IconButton
+        //position="absolute"
+        position={{ base: "absolute", "2xl": "fixed" }}
+        //top={-12}
+        top={{ base: -12, "2xl": 4 }}
         right={16}
         onClick={scrollToToday}
         aria-label="Scroll to Today"
+        //variant="outline"
         //variant="ghost"
-        //colorScheme="blue"
+        //colorScheme="black"
         //icon={<TimeIcon />}
         icon={<span>Today</span>}
         px={2}
       />
+
+      {isVisible &&
+        <IconButton
+          //position="absolute"
+          position={{ base: "absolute", xl: "fixed" }}
+          //top={-12}
+          top={{ base: -12, xl: 4 }}
+          left={4}
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          variant="outline"
+          //variant="ghost"
+          //colorScheme="black"
+          display={{ base: "none", xl: "inline-flex" }} // Hide on screens below xl
+          icon={<ArrowUpIcon />}
+          px={2}
+        />
+      }
 
       <DndProvider backend={HTML5Backend}>
         <Container
@@ -261,6 +323,15 @@ const App = () => {
 
       <hr />
 
+      {/* Notes section */}
+      <DndProvider backend={HTML5Backend}>
+        <Container maxWidth="container.lg" mt={10} pb={10}>
+          <NotesSection />
+        </Container>
+      </DndProvider>
+
+      <hr />
+
       <DndProvider backend={HTML5Backend}>
         <Container
           maxWidth="container.lg"
@@ -278,8 +349,6 @@ const App = () => {
 
         </Container>
       </DndProvider>
-
-
 
 
 

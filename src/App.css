@@ -61,10 +61,12 @@
 }
 
 .head_text {
+    padding-left: 15px;
+    padding-right: 15px;
     margin-top: 4rem;
     margin-bottom: 1rem;
     /* Equivalent to mt-5 */
-    font-size: 4rem;
+    font-size: 3.5rem;
     /* Equivalent to text-5xl */
     font-weight: 800;
     /* Equivalent to font-extrabold */
@@ -94,7 +96,7 @@
 }
 
 .orange_gradient {
-    font-size: 4.2rem;
+    font-size: 3.7rem;
     background-image: linear-gradient(to right, #0099ff, #00aeff, #00ff62);
     /* Equivalent to bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 */
     -webkit-background-clip: text;
@@ -139,6 +141,20 @@
     font-weight: 600;
 }
 
+.desc3 {
+    margin-top: 0rem;
+    /* Equivalent to mt-5 */
+    font-size: 2.5rem;
+    /* Equivalent to text-lg */
+    /* color: #4B5563;   */
+    color: useColorModeValue('gray-600', 'gray.400');
+    max-width: 40rem;
+    /* Equivalent to max-w-2xl */
+    margin-bottom: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
 .footer_text {
     font-size: 1.2rem;
     /* Equivalent to text-lg */
@@ -156,14 +172,9 @@
     font-style: italic;
     color: useColorModeValue("gray.600", 'gray.400');
     border-bottom: 3px solid #8b8b8b;
-    transition: transform 0.3s ease;  /* Add smooth transition */
 }
 
-.yash:hover {
-    transform: translateY(-5px);
-    /* Translate element 5px upwards on hover */
-}
 
-.lol{
+.lol {
     background-color: #fafafa;
 }
