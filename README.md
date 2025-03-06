@@ -13,3 +13,5 @@
 </h5>
 <h5> • Used local storage for data persistence, ensuring user tasks are saved across sessions.
 </h5>
+
+![Screenshot 2025-03-07 033712](https://github.com/user-attachments/assets/9feddaff-8d0e-49dd-adb9-b3dab4e1d884)
