@@ -343,7 +343,7 @@ const App = () => {
         >
           <footer>
             <p className="footer_text">
-              <a href="https://yashmavani.framer.website/"><span className='yash'>Yash Mavani</span></a> Production
+              <a href="https://yashmavani.tech"><span className='yash'>Yash Mavani</span></a> Production
             </p>
           </footer>
 
